@@ -7,6 +7,8 @@ project(using_markers)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   visualization_msgs
+  interactive_markers
+  tf
 )
 
 catkin_package()
@@ -19,3 +21,10 @@ target_link_libraries(basic_shapes ${catkin_LIBRARIES})
 
 add_executable(points_and_lines src/points_lines.cc)
 target_link_libraries(points_and_lines ${catkin_LIBRARIES})
+
+add_executable(simple_marker src/simple_marker.cc)
+target_link_libraries(simple_marker ${catkin_LIBRARIES})
+
+add_executable(basic_controls src/basic_controls.cc)
+target_link_libraries(basic_controls ${catkin_LIBRARIES})
+# add_dependencies(basic_shapes basic_controls_generate_messages_cpp)
