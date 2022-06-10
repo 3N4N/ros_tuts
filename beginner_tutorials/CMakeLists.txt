@@ -27,19 +27,19 @@ target_link_libraries(listener ${catkin_LIBRARIES})
 add_dependencies(listener beginner_tutorials_generate_messages_cpp)
 
 
-# add_executable(add_two_ints_server src/add_two_ints_server.cc)
-# target_link_libraries(add_two_ints_server ${catkin_LIBRARIES})
+add_executable(add_two_ints_server src/add_two_ints_server.cc)
+target_link_libraries(add_two_ints_server ${catkin_LIBRARIES})
 
-# add_executable(add_two_ints_client src/add_two_ints_client.cc)
-# target_link_libraries(add_two_ints_client ${catkin_LIBRARIES})
+add_executable(add_two_ints_client src/add_two_ints_client.cc)
+target_link_libraries(add_two_ints_client ${catkin_LIBRARIES})
 
 # catkin_python_setup()
 catkin_install_python(
-  PROGRAMS
-  # scripts/talker_py
-  scripts/talker_py.py
-  # scripts/listener_py
-  scripts/listener_py.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-  # DESTINATION ~/code/ros1ws/install/
+    PROGRAMS
+    # scripts/talker_py
+    scripts/talker_py.py
+    # scripts/listener_py
+    scripts/listener_py.py
+    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+    # DESTINATION ~/code/ros1ws/install/
 )
