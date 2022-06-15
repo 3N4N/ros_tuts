@@ -10,3 +10,6 @@ list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
 
 add_library(hello_world SHARED src/hello_world.cc)
 target_link_libraries(hello_world ${GAZEBO_LIBRARIES})
+
+add_library(model_push SHARED src/model_push.cc)
+target_link_libraries(model_push ${GAZEBO_LIBRARIES})
