@@ -1,0 +1,18 @@
+<launch>
+
+  <include file="$(find diff_drive_navigation)/launch/localization.launch"/>
+
+  <node pkg="move_base" type="move_base" name="move_base" output="screen">
+  <rosparam file="$(find diff_drive_navigation)/launch/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find diff_drive_navigation)/launch/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find diff_drive_navigation)/launch/config/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find diff_drive_navigation)/launch/config/global_costmap_params.yaml" command="load" />
+
+  <param    name="base_global_planner"       value="global_planner/GlobalPlanner"/>
+        <rosparam file="$(find diff_drive_navigation)/launch/config/planner_global.yaml" command="load" />
+
+  <rosparam file="$(find diff_drive_navigation)/launch/config/planner_teb.yaml" command="load" />
+        <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS"/>
+  </node>
+
+</launch>
