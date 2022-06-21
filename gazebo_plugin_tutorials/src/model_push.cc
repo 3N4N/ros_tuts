@@ -11,23 +11,23 @@ namespace gazebo
 class ModelPush: public ModelPlugin
 {
 public:
-    void Load(physics::ModelPtr _parent, sdf::ElementPtr )
-    {
-        this->model = _parent;
-        this->updateConnection =
-            event::Events::ConnectWorldUpdateBegin(std::bind(&ModelPush::OnUpdate, this));
-    }
+  void Load(physics::ModelPtr _parent, sdf::ElementPtr )
+  {
+    this->model = _parent;
+    this->updateConnection =
+      event::Events::ConnectWorldUpdateBegin(std::bind(&ModelPush::OnUpdate, this));
+  }
 
-    void OnUpdate()
-    {
-        this->model->SetLinearVel(ignition::math::Vector3d(.3,0,0));
-    }
+  void OnUpdate()
+  {
+    this->model->SetLinearVel(ignition::math::Vector3d(.3,0,0));
+  }
 
 private:
-    physics::ModelPtr model;
-    event::ConnectionPtr updateConnection;
+  physics::ModelPtr model;
+  event::ConnectionPtr updateConnection;
 };
 
 GZ_REGISTER_MODEL_PLUGIN(ModelPush)
 
-}
+  }

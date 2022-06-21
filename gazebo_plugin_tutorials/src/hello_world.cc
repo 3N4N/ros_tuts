@@ -11,15 +11,15 @@ namespace gazebo
 class WorldPluginTutorial: public WorldPlugin
 {
 public:
-    WorldPluginTutorial(): WorldPlugin()
-    {
-        printf("Helloworld\n");
-    }
-    void Load(physics::WorldPtr _world, sdf::ElementPtr _sdf) { }
+  WorldPluginTutorial(): WorldPlugin()
+  {
+    printf("Helloworld\n");
+  }
+  void Load(physics::WorldPtr _world, sdf::ElementPtr _sdf) { }
 };
 
 // Plugin must be registered w/ this macro
 // There are matching register plugin for each plugin type
 GZ_REGISTER_WORLD_PLUGIN(WorldPluginTutorial)
 
-}
+  }
